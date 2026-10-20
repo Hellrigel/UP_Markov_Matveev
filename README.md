@@ -18,7 +18,7 @@ README.md                этот файл
 - WPF, .NET Framework 4.7.2, C#
 - Microsoft SQL Server + Entity Framework 6, Database First (класс `Entities`
   и модели таблиц созданы мастером «ADO.NET Entity Data Model», `.edmx`-файл)
-- Microsoft.Office.Interop.Word / Excel — выгрузка отчётов в .docx, .pdf, .xlsx
+- Microsoft.Office.Interop.Word / Excel  выгрузка отчётов в .docx, .pdf, .xlsx
 - System.Windows.Forms.DataVisualization.Charting — диаграммы
 
 ## Как запустить
@@ -34,7 +34,7 @@ README.md                этот файл
    `Entities`) — при необходимости поправьте имя сервера на своё.
 5. Запустите проект (F5). Откроется страница авторизации.
 
-Если модель `Entities.edmx` в проекте отсутствует или не подключена к базе —
+Если модель `Entities.edmx` в проекте отсутствует или не подключена к базе 
 её нужно пересоздать через **Добавить → Создать новый элемент → «Модель
 ADO.NET EDM»** (EF Designer from database, Entity Framework 6.x, все 9
 таблиц, без пluralize/singularize). Таблица соответствия навигационных
@@ -75,7 +75,7 @@ ADO.NET EDM»** (EF Designer from database, Entity Framework 6.x, все 9
 - Страница администратора: CRUD для Clients, Warehouses, Orders, Cargo
   (добавление / редактирование / удаление с подтверждением)
 - Каскадное удаление на уровне БД (удаление клиента удаляет его заказы,
-  удаление заказа удаляет его грузы; удаление склада не ломает заказы —
+  удаление заказа удаляет его грузы; удаление склада не ломает заказы 
   WarehouseId становится NULL)
 - Диаграмма стоимости заказов по статусам (в разрезе клиента, с выбором типа
   диаграммы)
