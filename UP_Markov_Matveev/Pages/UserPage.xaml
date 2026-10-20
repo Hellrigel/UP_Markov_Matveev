@@ -1,0 +1,53 @@
+<Page x:Class="UP_Markov_Matveev.Pages.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Заказы">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   x:Name="WelcomeText"
+                   Text="Заказы логистической компании"
+                   FontSize="16pt"
+                   FontWeight="Bold"
+                   Margin="0,0,0,12"/>
+
+        <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,12">
+            <TextBlock Text="Поиск (клиент / адрес):" VerticalAlignment="Center"/>
+            <TextBox x:Name="searchTextBox" MinWidth="180" TextChanged="searchTextBox_TextChanged"/>
+
+            <TextBlock Text="Статус:" Margin="16,0,0,0" VerticalAlignment="Center"/>
+            <ComboBox x:Name="statusFilterComboBox" MinWidth="140" SelectionChanged="Filter_SelectionChanged"/>
+
+            <TextBlock Text="Сортировка по дате:" Margin="16,0,0,0" VerticalAlignment="Center"/>
+            <ComboBox x:Name="sortComboBox" MinWidth="140" SelectedIndex="1" SelectionChanged="Filter_SelectionChanged">
+                <ComboBoxItem Content="Сначала старые"/>
+                <ComboBoxItem Content="Сначала новые"/>
+            </ComboBox>
+
+            <Button x:Name="clearFiltersButton" Content="Очистить фильтр" Click="clearFiltersButton_Click"/>
+            <Button x:Name="ButtonChangePassword" Content="Сменить пароль" Click="ButtonChangePassword_Click"/>
+            <Button x:Name="ButtonLogout" Content="Выход" Click="ButtonLogout_Click"/>
+        </WrapPanel>
+
+        <DataGrid Grid.Row="2"
+                  x:Name="OrdersDataGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding OrderId}" Width="40"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.Name}" Width="180"/>
+                <DataGridTextColumn Header="Откуда" Binding="{Binding PickupAddress}" Width="*"/>
+                <DataGridTextColumn Header="Куда" Binding="{Binding DeliveryAddress}" Width="*"/>
+                <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderDate, StringFormat=dd.MM.yyyy}" Width="100"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding OrderStatus.Name}" Width="110"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost, StringFormat={}{0:N2} руб.}" Width="110"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

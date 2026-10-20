@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9acaf2d1891647b0ad635b460c50fc40" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="UP_Markov_Matveev.Cargo" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.CargoTypes" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.Cities" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.Clients" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.ClientTypes" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.Orders" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.OrderStatuses" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.sysdiagrams" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.Users" Width="1.5" PointX="7.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_Markov_Matveev.Warehouses" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Cargo_CargoTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Cargo_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Clients_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Warehouses_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Clients_ClientTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Orders_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Orders_OrderStatuses" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_Markov_Matveev.FK_Orders_Warehouses" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

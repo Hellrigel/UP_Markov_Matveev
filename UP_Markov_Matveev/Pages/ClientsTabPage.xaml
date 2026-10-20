@@ -1,0 +1,42 @@
+<Page x:Class="UP_Markov_Matveev.Pages.ClientsTabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Клиенты">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="ButtonBackToAdmin" Content="← В меню" Click="ButtonBackToAdmin_Click"/>
+            <TextBlock Text="Таблица клиентов" FontSize="16pt" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="DataGridClients" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ClientId}" Width="40"/>
+                <DataGridTextColumn Header="Имя / организация" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Тип" Binding="{Binding ClientType.Name}" Width="90"/>
+                <DataGridTextColumn Header="Город" Binding="{Binding City.Name}" Width="120"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="130"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Width="150"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="*"/>
+                <DataGridTemplateColumn Width="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" ToolTip="Редактировать данные" Click="ButtonEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="ButtonAdd" Content="Добавить" ToolTip="Добавить данные" Click="ButtonAdd_Click"/>
+            <Button x:Name="ButtonDel" Content="Удалить" ToolTip="Удалить данные" Style="{StaticResource DangerButton}" Click="ButtonDel_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

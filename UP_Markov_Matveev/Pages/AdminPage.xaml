@@ -1,0 +1,33 @@
+<Page x:Class="UP_Markov_Matveev.Pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Администрирование">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="WelcomeText"
+                   Grid.Row="0"
+                   Text="Панель администратора"
+                   FontSize="18pt"
+                   FontWeight="Bold"
+                   Margin="0,0,0,24"/>
+
+        <UniformGrid Grid.Row="1" Columns="3" Rows="2" VerticalAlignment="Center">
+            <Button x:Name="BtnTab1" Content="Клиенты" Click="BtnTab1_Click" Height="80" Margin="12" FontSize="13pt"/>
+            <Button x:Name="BtnTab2" Content="Склады" Click="BtnTab2_Click" Height="80" Margin="12" FontSize="13pt"/>
+            <Button x:Name="BtnTab3" Content="Заказы" Click="BtnTab3_Click" Height="80" Margin="12" FontSize="13pt"/>
+            <Button x:Name="BtnTab4" Content="Грузы" Click="BtnTab4_Click" Height="80" Margin="12" FontSize="13pt"/>
+            <Button x:Name="BtnTab5" Content="Диаграммы и отчёты" Click="BtnTab5_Click" Height="80" Margin="12" FontSize="13pt"/>
+        </UniformGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="ButtonChangePassword" Content="Сменить пароль" Click="ButtonChangePassword_Click"/>
+            <Button x:Name="ButtonLogout" Content="Выход" Click="ButtonLogout_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

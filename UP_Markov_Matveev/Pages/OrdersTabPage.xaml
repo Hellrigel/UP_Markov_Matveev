@@ -1,0 +1,43 @@
+<Page x:Class="UP_Markov_Matveev.Pages.OrdersTabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Заказы">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="ButtonBackToAdmin" Content="← В меню" Click="ButtonBackToAdmin_Click"/>
+            <TextBlock Text="Таблица заказов" FontSize="16pt" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="DataGridOrders" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding OrderId}" Width="40"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.Name}" Width="150"/>
+                <DataGridTextColumn Header="Склад" Binding="{Binding Warehouse.Name}" Width="130"/>
+                <DataGridTextColumn Header="Откуда" Binding="{Binding PickupAddress}" Width="*"/>
+                <DataGridTextColumn Header="Куда" Binding="{Binding DeliveryAddress}" Width="*"/>
+                <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderDate, StringFormat=dd.MM.yyyy}" Width="95"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding OrderStatus.Name}" Width="100"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost, StringFormat=N2}" Width="90"/>
+                <DataGridTemplateColumn Width="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" ToolTip="Редактировать данные" Click="ButtonEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="ButtonAdd" Content="Добавить" ToolTip="Добавить данные" Click="ButtonAdd_Click"/>
+            <Button x:Name="ButtonDel" Content="Удалить" ToolTip="Удалить данные" Style="{StaticResource DangerButton}" Click="ButtonDel_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

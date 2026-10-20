@@ -1,0 +1,39 @@
+<Page x:Class="UP_Markov_Matveev.Pages.DiagrammPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:wf="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+      xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+      Title="Диаграммы и отчёты">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="ButtonBackToAdmin" Content="← В меню" Click="ButtonBackToAdmin_Click"/>
+            <TextBlock Text="Диаграммы и выгрузка отчётов" FontSize="16pt" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0"/>
+        </StackPanel>
+
+        <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,8,0,8">
+            <TextBlock Text="Клиент:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="CmbClient" MinWidth="220" DisplayMemberPath="Name" SelectionChanged="UpdateChart"/>
+
+            <TextBlock Text="Тип диаграммы:" Margin="16,0,0,0" VerticalAlignment="Center"/>
+            <ComboBox x:Name="CmbDiagram" MinWidth="140" SelectionChanged="UpdateChart"/>
+
+            <Button x:Name="ButtonExportWord" Content="Экспорт в Word / PDF" Click="ButtonExportWord_Click"/>
+            <Button x:Name="ButtonExportExcel" Content="Экспорт в Excel" Click="ButtonExportExcel_Click"/>
+        </WrapPanel>
+
+        <wf:WindowsFormsHost Grid.Row="2" Margin="5">
+            <charts:Chart x:Name="ChartOrders">
+                <charts:Chart.Legends>
+                    <charts:Legend/>
+                </charts:Chart.Legends>
+            </charts:Chart>
+        </wf:WindowsFormsHost>
+    </Grid>
+</Page>

@@ -1,0 +1,40 @@
+<Page x:Class="UP_Markov_Matveev.Pages.WarehousesTabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Склады">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="ButtonBackToAdmin" Content="← В меню" Click="ButtonBackToAdmin_Click"/>
+            <TextBlock Text="Таблица складов" FontSize="16pt" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="DataGridWarehouses" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding WarehouseId}" Width="40"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Город" Binding="{Binding City.Name}" Width="120"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="*"/>
+                <DataGridTextColumn Header="Вместимость, т" Binding="{Binding Capacity, StringFormat=N2}" Width="120"/>
+                <DataGridTemplateColumn Width="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" ToolTip="Редактировать данные" Click="ButtonEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="ButtonAdd" Content="Добавить" ToolTip="Добавить данные" Click="ButtonAdd_Click"/>
+            <Button x:Name="ButtonDel" Content="Удалить" ToolTip="Удалить данные" Style="{StaticResource DangerButton}" Click="ButtonDel_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,44 @@
+<Page x:Class="UP_Markov_Matveev.Pages.RegPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Регистрация">
+
+    <Grid>
+        <Border Width="440"
+                Padding="32"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="{DynamicResource PanelBrush}"
+                CornerRadius="8">
+            <StackPanel>
+                <TextBlock Text="Регистрация нового пользователя"
+                           FontSize="16pt"
+                           FontWeight="Bold"
+                           Margin="0,0,0,16"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Center"/>
+
+                <Label Content="Логин"/>
+                <TextBox x:Name="txtbxLog" ToolTip="Введите логин или почту" TextChanged="txtbxLog_TextChanged"/>
+
+                <Label Content="ФИО"/>
+                <TextBox x:Name="txtbxFIO" ToolTip="Введите ФИО" TextChanged="txtbxFIO_TextChanged"/>
+
+                <Label Content="Пароль"/>
+                <PasswordBox x:Name="passBxFrst" ToolTip="Введите пароль"/>
+
+                <Label Content="Подтверждение пароля"/>
+                <PasswordBox x:Name="passBxScnd" ToolTip="Повторите пароль"/>
+
+                <Label Content="Роль"/>
+                <ComboBox x:Name="comboBxRole" ToolTip="Выберите роль" SelectedIndex="0">
+                    <ComboBoxItem Content="User"/>
+                    <ComboBoxItem Content="Admin"/>
+                </ComboBox>
+
+                <Button x:Name="ButtonRegister" Content="Зарегистрироваться" Click="ButtonRegister_Click"/>
+                <Button x:Name="ButtonCancel" Content="Назад ко входу" Click="ButtonCancel_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,41 @@
+<Page x:Class="UP_Markov_Matveev.Pages.CargoTabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Грузы">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="ButtonBackToAdmin" Content="← В меню" Click="ButtonBackToAdmin_Click"/>
+            <TextBlock Text="Таблица грузов" FontSize="16pt" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="DataGridCargo" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding CargoId}" Width="40"/>
+                <DataGridTextColumn Header="Заказ №" Binding="{Binding OrderId}" Width="70"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Тип груза" Binding="{Binding CargoType.Name}" Width="130"/>
+                <DataGridTextColumn Header="Вес, кг" Binding="{Binding WeightKg, StringFormat=N2}" Width="90"/>
+                <DataGridTextColumn Header="Объём, м³" Binding="{Binding VolumeM3, StringFormat=N3}" Width="90"/>
+                <DataGridTemplateColumn Width="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" ToolTip="Редактировать данные" Click="ButtonEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="ButtonAdd" Content="Добавить" ToolTip="Добавить данные" Click="ButtonAdd_Click"/>
+            <Button x:Name="ButtonDel" Content="Удалить" ToolTip="Удалить данные" Style="{StaticResource DangerButton}" Click="ButtonDel_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
