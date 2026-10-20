@@ -51,7 +51,7 @@ ADO.NET EDM»** (EF Designer from database, Entity Framework 6.x, все 9
 | `Cargo`      | `Orders`           | `Order`                  |
 | `Cargo`      | `CargoTypes`       | `CargoType`              |
 
-Имя контейнера сущностей и имя строки подключения в `App.config` — `Entities`.
+Имя контейнера сущностей и имя строки подключения в `App.config`  `Entities`.
 
 ### Учётные записи для входа
 
