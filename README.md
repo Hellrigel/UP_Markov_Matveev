@@ -6,11 +6,11 @@
 ## Структура репозитория
 
 ```
-UP_Markov_Matveev.sln   — решение Visual Studio
-UP_Markov_Matveev/      — исходный код WPF-проекта
-db/schema.sql           — скрипт создания БД и тестовых данных
-res/                    — иконка приложения и изображения
-README.md               — этот файл
+UP_Markov_Matveev.sln    решение Visual Studio
+UP_Markov_Matveev/       исходный код WPF-проекта
+db/schema.sql            скрипт создания БД и тестовых данных
+res/                     иконка приложения и изображения
+README.md                этот файл
 ```
 
 ## Технологии
@@ -23,7 +23,7 @@ README.md               — этот файл
 
 ## Как запустить
 
-1. Выполните `db/schema.sql` в SQL Server Management Studio — скрипт создаёт
+1. Выполните `db/schema.sql` в SQL Server Management Studio  скрипт создаёт
    базу `DB_Markov_Matveev`, все таблицы, связи и тестовые данные.
 2. Откройте `UP_Markov_Matveev.sln` в Visual Studio (с компонентом ".NET
    desktop development").
